@@ -12,5 +12,9 @@ class UserService{
     static updateUserUsername(user, cadena){
         user.username = cadena
     }
+    static getAllUsernames(usersList){
+        return usersList.map(user => {return user.username})
+
+    }
 }
 module.exports = UserService

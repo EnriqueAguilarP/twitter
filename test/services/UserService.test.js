@@ -23,4 +23,14 @@ describe("Test for UserService", () => {
         UserService.updateUserUsername(user, "jesusAguilar")
         expect(user.username).toBe("jesusAguilar")
       });
+
+      test('4 Given a list of users give me the list of usernames', () => {
+        const user1 = UserService.create(301578, "enriqueAguilar1", "Enrique Aguilar")
+        const user2 = UserService.create(321588, "enriqueAguilar2", "Enrique Aguilar")
+        const user3 = UserService.create(361548, "enriqueAguilar3", "Enrique Aguilar")
+        const usernames = UserService.getAllUsernames([user1, user2, user3])
+        expect(usernames).toContain("enriqueAguilar1")
+        expect(usernames).toContain("enriqueAguilar2")
+        expect(usernames).toContain("enriqueAguilar3")
+      });
 })

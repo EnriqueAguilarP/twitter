@@ -10,4 +10,12 @@ describe("Unit test for user class", () => {
       expect(enriqueAguilar.dateCreated).not.toBeUndefined()
       expect(enriqueAguilar.lastUpdated).not.toBeUndefined()
     });
+
+    test('Add getters', () => {
+        const enriqueAguilar = new User(301578, "enriqueAguilarP", "Enrique Aguilar", "Javascript developer")
+        expect(enriqueAguilar.getUsername).toBe("enriqueAguilarP")
+        expect(enriqueAguilar.getBio).toBe("Javascript developer")
+        expect(enriqueAguilar.getDateCreated).not.toBeUndefined()
+        expect(enriqueAguilar.getLastUpdated).not.toBeUndefined()
+      });
   })
